@@ -1,0 +1,139 @@
+/* GLOBAL */
+html, body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+/* HEADER  */
+header{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2;
+}
+/* NAV  */
+
+#movieNavbar .nav-item::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    display: block;
+    /* #fbbd61, #ec7532 */
+    /* từ trái qua phải */
+    /* left là vị trí mày bắt đầu */
+    /* right là màu kết thúc  */
+    background: linear-gradient(to right,#fbbd61, #ec7532 );
+    transition: all 0.5s;
+
+}
+#movieNavbar .nav-item:hover::after{
+    width: 100%;
+}
+
+#movieNavbar .nav-item.active::after{
+    width: 100%;
+
+
+}
+/* .carousel */
+#movieCarousel .carousel-caption{
+    /* canh giữa cho position, absolute  */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+/* NEW IN  */
+.newIn__img{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.newIn__img .newIn__overplay{
+    position: absolute;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    width: 205%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fbbd61, #ec7532);
+    transform: translateX(-125%) skewX(30deg);
+    transition: all 0.5s;
+}
+ /* đâ hover vào rồi */
+ .newIn__img:hover .newIn__overplay{
+     transform: translateX(-30%) skewX(30deg); 
+ }
+ /* Coming */
+ .comingSoon{
+     background-color: black;
+ }
+ .coming__bg{
+     margin: 80px 0;
+     background-image: url(../img/slide-3.png);
+     background-size:cover;
+     background-position: center center;
+ }
+ .coming__bg h1{
+     color: white;
+ }
+ .coming__content > span{
+     font-size: 14px;
+     color: #ec7532;
+
+ }
+ .coming__content h1{
+     font-size: 34px;
+ }
+ .coming__content .fa-star{
+     font-size: 14px;
+     color: #fbbd61;
+ }
+ .coming__date{
+     opacity: 0.75;
+     font-size: 14px;
+     margin-left: 10px;
+ }
+ .coming__trailer{
+     position: relative;
+     transform: translate(10px, -35px);
+ }
+ .coming__trailer i{
+     position: absolute;
+     width: 84px;
+     height: 84px;
+     display: block;
+     border: 2px solid #ec7532;
+     border-radius: 50%;
+     color: white;
+     text-align: center;
+     line-height: 84px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ .coming__list img{
+     border-radius: 18px;
+     width: 120ox;
+     height: 160px;
+ }
+ .coming__list{
+     color: white;
+     text-align: center;
+ }
+ .coming__list span{
+     color: #ffff;
+     font-size: 14px;
+ }
+
+ 
+/* Reponsive */
+@media screen and (max-width:576px){
+    /* nhỏ hon 576px */
+    .newIn__img img{
+        width: 100%;
+    }
+}
